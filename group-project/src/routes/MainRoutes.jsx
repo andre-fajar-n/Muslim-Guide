@@ -1,19 +1,23 @@
-import React from "react"
-import { Route, Switch, BrowserRouter } from "react-router-dom"
-import { Provider } from "react-redux"
-import store from "../store"
-import Home from "../pages/Home"
+import React from "react";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+
+import { Provider } from "react-redux";
+import store from "../store";
+
+import SignIn from "../page/cobaSigninRedux";
+// import Profil from "../page/profil";
 
 const MainRoutes = () => {
-    return (
-        <Provider store={store}>
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                </Switch>
-            </BrowserRouter>
-        </Provider>
-    )
-}
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/signin" component={SignIn} />
+          {/* <Route exact path="/profil" component={Profil} /> */}
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+  );
+};
 
-export default MainRoutes
+export default MainRoutes;
