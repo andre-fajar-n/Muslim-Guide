@@ -6,12 +6,13 @@ import { showPosition, responseWithDistance } from "../store/action/locationActi
 
 class Test extends Component {
     componentDidMount = async () => {
-        this.props.dataWaktu("112.6079458","-7.973006")
+        this.props.dataWaktu("112.6079458", "-7.973006")
 
     }
-    
+
     trigerFunction = async () => {
         await this.props.showPosition()
+
         console.log('ini user loc',this.props.userLoc)
         await this.props.dataMasjid(`${this.props.userLoc.userlatitude}`, `${this.props.userLoc.userlongitude}`)
         // console.log('data msjd====>', this.props.masjid)
@@ -30,7 +31,7 @@ class Test extends Component {
 
                 </div>
                 <button
-                onClick = {() => this.trigerFunction()}
+                    onClick={() => this.trigerFunction()}
                 >
                     Click Me
                 </button>
@@ -44,9 +45,9 @@ const mapStateToProps = (state) => {
     return {
         masjid: state.masjid,
         waktuSholat: state.waktuSholat,
-        userLoc : state.userLocation,
-        dataMasjid : state.masjid.masjid
-        // dataWithDistance : state.
+        userLoc: state.userLocation,
+        dataMasjid: state.masjid.masjid
+
     }
 }
 
