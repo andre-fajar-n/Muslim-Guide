@@ -1,5 +1,12 @@
-// import axios from "axios";
+import axios from "axios"
 
-// const apiKey = "";
-// const baseUrl =
-//   "https://maps.googleapis.com/maps/api/place/nearbysearch/json?rankby=distance&type=mosque&key=AIzaSyCCOJg5Yvp9FQ_D19Hr7TP4Lx7PAQaWMDM";
+const apiKey = process.env.REACT_APP_API_KEY_GOOGLE_PLACES
+const baseUrl = `${process.env.REACT_APP_BASE_URL_GOOGLE_PLACES}&key=${apiKey}`
+
+export const getMasjid = (lon, lat) => {
+    return async (dispatch) => {
+        const responseMasjid = await axios.get(`https://cors-anywhere.herokuapp.com/${baseUrl}&location=${lon},${lat}`)
+        console.warn("cek masjid", responseMasjid.data.results)
+        dispatch({ type: "GET_MASJID", payload: responseMasjid.data.results })
+    }
+}
