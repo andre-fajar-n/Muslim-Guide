@@ -1,12 +1,12 @@
 import axios from "axios"
 
 const apiKey = process.env.REACT_APP_API_KEY_GOOGLE_PLACES
-const baseUrl = `${process.env.REACT_APP_BASE_URL_GOOGLE_PLACES}${apiKey}`
+const baseUrl = `${process.env.REACT_APP_BASE_URL_GOOGLE_PLACES}&key=${apiKey}`
 
-export const getMasjid = (lon = '-7.973006', lat = '112.6079458') => {
+export const getMasjid = (lon, lat) => {
     return async (dispatch) => {
-        const response = await axios.get(`${baseUrl}&location=${lon},${lat}`)
-        console.warn("cek di action", response.data)
-        dispatch({ type: "GET_MASJID", payload: response.data })
+        const responseMasjid = await axios.get(`https://cors-anywhere.herokuapp.com/${baseUrl}&location=${lon},${lat}`)
+        console.warn("cek masjid", responseMasjid.data.results)
+        dispatch({ type: "GET_MASJID", payload: responseMasjid.data.results })
     }
 }
