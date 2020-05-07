@@ -19,6 +19,3 @@ export default function locationReducer(locationState = initLocationState, actio
     }
 
 }
-
-
-// export default locationReducer;
