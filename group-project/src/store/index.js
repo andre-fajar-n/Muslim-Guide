@@ -4,11 +4,13 @@ import thunk from "redux-thunk"
 import masjidReducer from "./reducer/masjid";
 import waktuSholatReducer from "./reducer/waktuSholat";
 import userReducer from "./reducer/user";
+import locationReducer from "./reducer/locationReducer";
 
 const rootReducer = combineReducers({
     masjid: masjidReducer,
     waktuSholat: waktuSholatReducer,
-  user: userReducer,
+    user: userReducer,
+    userLocation : locationReducer,
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
