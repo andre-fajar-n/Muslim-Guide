@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrlUser = "https://ajay123.free.beeceptor.com/login";
+const baseUrlUser = "https://5eb3a672974fee0016ecd736.mockapi.io/user";
 
 export const changeInputUsername = (e) => {
   return {

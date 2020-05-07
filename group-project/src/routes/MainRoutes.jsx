@@ -4,8 +4,8 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../store";
 
-import SignIn from "../page/cobaSigninRedux";
-// import Profil from "../page/profil";
+import SignIn from "../page/signin";
+import Profil from "../page/profil";
 
 const MainRoutes = () => {
   return (
@@ -13,7 +13,7 @@ const MainRoutes = () => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/signin" component={SignIn} />
-          {/* <Route exact path="/profil" component={Profil} /> */}
+          <Route exact path="/profil" component={Profil} />
         </Switch>
       </BrowserRouter>
     </Provider>

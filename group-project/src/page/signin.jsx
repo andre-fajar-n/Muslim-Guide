@@ -1,4 +1,6 @@
+//page signin
 import React, { Component } from "react";
+import "../styles-aji/style-login.css";
 import { connect } from "react-redux";
 import {
   getListUser,
@@ -23,28 +25,32 @@ class SignIn extends Component {
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={(el) => el.preventDefault()}>
-          <label for="fname">First name:</label>
-          <br />
+        <div className="login-box">
+          <h1>Login</h1>
+          <div className="textbox">
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              onChange={(el) => this.props.changeInputUsername(el)}
+            />
+          </div>
+          <div className="textbox">
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={(el) => this.props.changeInputPassword(el)}
+            />
+          </div>
           <input
-            type="text"
-            id="fname"
-            name="fname"
-            onChange={(el) => this.props.changeInputUsername(el)}
+            className="btn"
+            type="button"
+            name="button"
+            value="Sign in"
+            onClick={this.postLogin}
           />
-          <br />
-          <label for="lname">Password:</label>
-          <br />
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            onChange={(el) => this.props.changeInputPassword(el)}
-          />
-          <br />
-          <br />
-          <button onClick={this.postLogin}>submit</button>
-        </form>
+        </div>
       </React.Fragment>
     );
   }
