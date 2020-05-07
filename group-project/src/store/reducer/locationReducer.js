@@ -1,6 +1,7 @@
 const initLocationState = {
     userlatitude : '',
-    userlongitude : ''
+    userlongitude : '',
+    dataWithDistance : []
 }
 
 export default function locationReducer(locationState = initLocationState, action) {
@@ -12,6 +13,12 @@ export default function locationReducer(locationState = initLocationState, actio
                 userlongitude : action.longitude
             }
 
+        case "SET_DATA_WITH_DISTANCE" :
+            return {
+                ...locationState,
+                dataWithDistance : action.payload
+            }
+
         default :
             return {
                 ...locationState
@@ -19,3 +26,4 @@ export default function locationReducer(locationState = initLocationState, actio
     }
 
 }
+
