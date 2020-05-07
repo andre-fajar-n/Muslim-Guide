@@ -6,14 +6,15 @@ import { showPosition } from "../store/action/locationAction"
 
 class Test extends Component {
     componentDidMount = async () => {
-        this.props.dataWaktu("112.6079458","-7.973006")
+        this.props.dataWaktu("112.6079458", "-7.973006")
 
     }
-    
+
     trigerFunction = async () => {
         await this.props.showPosition()
-        console.log('ini user loc',this.props.userLoc)
-        await this.props.dataMasjid(`${this.props.userLoc.userlongitude}`, `${this.props.userLoc.userlatitude}`)
+        console.log('ini user loc', this.props.userLoc)
+        await this.props.dataMasjid(`${this.props.userLoc.userlatitude}`, `${this.props.userLoc.userlongitude}`)
+        await this.props.dataWaktu(`${this.props.userLoc.userlatitude}`, `${this.props.userLoc.userlongitude}`)
     }
 
     render() {
@@ -24,7 +25,7 @@ class Test extends Component {
 
                 </div>
                 <button
-                onClick = {() => this.trigerFunction()}
+                    onClick={() => this.trigerFunction()}
                 >
                     Click Me
                 </button>
@@ -38,15 +39,15 @@ const mapStateToProps = (state) => {
     return {
         masjid: state.masjid,
         waktuSholat: state.waktuSholat,
-        userLoc : state.userLocation,
-        dataMasjid : state.masjid.masjid
+        userLoc: state.userLocation,
+        dataMasjid: state.masjid.masjid
     }
 }
 
 const mapDispatchToProps = {
     dataMasjid: (lon, lat) => getMasjid(lon, lat),
     dataWaktu: (lon, lat) => getWaktuSholat(lon, lat),
-    showPosition : showPosition,
+    showPosition: showPosition,
     // getJarak
 }
 

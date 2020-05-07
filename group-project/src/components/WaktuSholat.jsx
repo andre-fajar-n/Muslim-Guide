@@ -1,6 +1,6 @@
 import React from "react"
 
-const WaktuSholat = () => {
+const WaktuSholat = (props) => {
     return (
         <div className="card card-prayer text-center mt-4">
             <div className="card-header">
@@ -14,9 +14,42 @@ const WaktuSholat = () => {
                 </ul>
             </div>
             <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <div className="d-flex justify-content-between">
+                    <h5 className="card-title">{props.jamSholat.tglMasehi}</h5>
+                    <h5 className="card-title">{props.jamSholat.tglHijriyah}</h5>
+                </div>
+                <table className="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <th>Imsak</th>
+                            <td>{props.jamSholat.waktuSholat.Imsak}</td>
+                        </tr>
+                        <tr>
+                            <th>Subuh</th>
+                            <td>{props.jamSholat.waktuSholat.Fajr}</td>
+                        </tr>
+                        <tr>
+                            <th>Terbit Fajr</th>
+                            <td>{props.jamSholat.waktuSholat.Sunrise}</td>
+                        </tr>
+                        <tr>
+                            <th>Dzuhur</th>
+                            <td>{props.jamSholat.waktuSholat.Dhuhr}</td>
+                        </tr>
+                        <tr>
+                            <th>Ashar</th>
+                            <td>{props.jamSholat.waktuSholat.Asr}</td>
+                        </tr>
+                        <tr>
+                            <th>Maghrib</th>
+                            <td>{props.jamSholat.waktuSholat.Maghrib}</td>
+                        </tr>
+                        <tr>
+                            <th>Isya</th>
+                            <td>{props.jamSholat.waktuSholat.Isha}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     )
