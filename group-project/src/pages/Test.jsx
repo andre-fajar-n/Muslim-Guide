@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { getMasjid } from "../store/action/masjid"
 import { connect } from "react-redux"
 import { getWaktuSholat } from "../store/action/waktuSholat"
-import { showPosition } from "../store/action/locationAction"
+import { showPosition, responseWithDistance } from "../store/action/locationAction"
 
 class Test extends Component {
     componentDidMount = async () => {
@@ -13,7 +13,13 @@ class Test extends Component {
     trigerFunction = async () => {
         await this.props.showPosition()
         console.log('ini user loc',this.props.userLoc)
-        await this.props.dataMasjid(`${this.props.userLoc.userlongitude}`, `${this.props.userLoc.userlatitude}`)
+        await this.props.dataMasjid(`${this.props.userLoc.userlatitude}`, `${this.props.userLoc.userlongitude}`)
+        // console.log('data msjd====>', this.props.masjid)
+        await this.props.responseWithDistance({
+            lat : this.props.userLoc.userlatitude, 
+            lon : this.props.userLoc.userlongitude, 
+            data : this.props.masjid
+        })
     }
 
     render() {
@@ -40,6 +46,7 @@ const mapStateToProps = (state) => {
         waktuSholat: state.waktuSholat,
         userLoc : state.userLocation,
         dataMasjid : state.masjid.masjid
+        // dataWithDistance : state.
     }
 }
 
@@ -47,7 +54,7 @@ const mapDispatchToProps = {
     dataMasjid: (lon, lat) => getMasjid(lon, lat),
     dataWaktu: (lon, lat) => getWaktuSholat(lon, lat),
     showPosition : showPosition,
-    // getJarak
+    responseWithDistance : responseWithDistance
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test)
