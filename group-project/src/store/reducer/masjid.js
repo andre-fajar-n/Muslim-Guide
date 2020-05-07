@@ -1,8 +1,8 @@
-const initialState = {
+const initialStateMasjid = {
     masjid: []
 }
 
-export default function masjidReducer(stateMasjid = initialState, action) {
+export default function masjidReducer(stateMasjid = initialStateMasjid, action) {
     switch (action.type) {
         case "GET_MASJID":
             return {
