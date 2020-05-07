@@ -5,8 +5,8 @@ import { getWaktuSholat } from "../store/action/waktuSholat"
 
 class Home extends Component {
     componentDidMount = async () => {
-        this.props.dataMasjid("-7.973006", "112.6079458")
         this.props.dataWaktu("-7.973006", "112.6079458")
+        await this.props.dataMasjid("-7.973006", "112.6079458")
     }
     render() {
         console.warn("cek di home", this.props)
