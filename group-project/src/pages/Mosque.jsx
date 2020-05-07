@@ -12,11 +12,14 @@ class Mosque extends Component {
                 <Navigation />
                 <header className="masthead">
                     <div className="main-box">
-                        {this.props.masjid.masjid.map((value) =>
-                            (
+                        {this.props.userLoc.dataWithDistance.map((value) =>
+                            (   
+                                
                                 <ListMosque
-                                    nama={value.name}
-                                    alamat={value.vicinity} />
+                                    nama={value.masjidName}
+                                    alamat={value.masjidAlamat} 
+                                    jarak={value.jarak} 
+                                />
 
                             ))
                         }
