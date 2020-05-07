@@ -1,3 +1,4 @@
+//page profil
 import React, { Component } from "react";
 import "../styles-aji/style-profil.css";
 import { connect } from "react-redux";
