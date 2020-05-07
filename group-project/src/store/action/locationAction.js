@@ -4,7 +4,9 @@ export function showPosition() {
         await navigator.geolocation.getCurrentPosition((position) => {
             let startPos = position;
             // console.log(position)
+
             dispatch (
+
                 {
                     type : "GET_USER_LONLAT",
                     latitude : startPos.coords.latitude,
