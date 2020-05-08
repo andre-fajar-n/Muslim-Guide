@@ -23,33 +23,36 @@ class SignIn extends Component {
   };
 
   render() {
+    console.warn("cek login", this.props)
     return (
       <React.Fragment>
-        <div className="login-box">
-          <h1>Login</h1>
-          <div className="textbox">
+        <div className="body-signin">
+          <div className="login-box">
+            <h1>Login</h1>
+            <div className="textbox">
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                onChange={(el) => this.props.changeInputUsername(el)}
+              />
+            </div>
+            <div className="textbox">
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={(el) => this.props.changeInputPassword(el)}
+              />
+            </div>
             <input
-              type="text"
-              placeholder="Username"
-              name="username"
-              onChange={(el) => this.props.changeInputUsername(el)}
+              className="btn"
+              type="button"
+              name="button"
+              value="Sign in"
+              onClick={this.postLogin}
             />
           </div>
-          <div className="textbox">
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={(el) => this.props.changeInputPassword(el)}
-            />
-          </div>
-          <input
-            className="btn"
-            type="button"
-            name="button"
-            value="Sign in"
-            onClick={this.postLogin}
-          />
         </div>
       </React.Fragment>
     );

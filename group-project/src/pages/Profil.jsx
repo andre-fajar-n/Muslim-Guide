@@ -2,11 +2,19 @@
 import React, { Component } from "react";
 import "../styles-aji/style-profil.css";
 import { connect } from "react-redux";
+import Navigation from "../components/Navigation";
 
 class Profil extends Component {
+
+  // componentDidMount() {
+  //   const tagBody = document.getElementsByTagName('body')[0].setAttribute("style", "background-image : url('../images-aji/bg.jpg') !important;")
+  // }
+
   render() {
+    console.warn("cek profil", this.props)
     return (
       <React.Fragment>
+        <Navigation />
         <div className="profil-body">
           <div className="profil-card">
             <img

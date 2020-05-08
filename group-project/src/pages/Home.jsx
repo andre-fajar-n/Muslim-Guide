@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { getWaktuSholat } from "../store/action/waktuSholat"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import { showPosition } from "../store/action/locationAction"
 
 class Home extends Component {
@@ -23,38 +23,45 @@ class Home extends Component {
     render() {
         console.warn("cek di home", this.props)
         return (
-            <body id="page-top">
-                <Navigation {...this.props} />
-                <header className="masthead">
-                    <div className="container h-100">
-                        <div className="row h-100 align-items-center justify-content-center text-center">
-                            <div className="col-lg-10 align-self-end">
-                                <h1 className="text-uppercase text-white font-weight-bold">السلام عليكم ورحمة الله وبركاته</h1>
-                                <hr className="divider my-4" />
-                            </div>
-                            <div className="col-lg-8 align-self-baseline">
-                                <p className="text-white-75 font-weight-light mb-5">Muslim Guide can help you find nearest mosque from your location.<br />Don't miss your prayers by activating notification!</p>
-                                <Link className="btn-home btn-primary btn-xl js-scroll-trigger"
-                                    onClick={() => this.trigerFunction()}
-                                // data={this.props}
-                                >
-                                    Mosque Near Me
+            <div>
+                {this.props.isLogin ? (
+
+                    <body id="page-top">
+                        <Navigation {...this.props} />
+                        <header className="masthead">
+                            <div className="container h-100">
+                                <div className="row h-100 align-items-center justify-content-center text-center">
+                                    <div className="col-lg-10 align-self-end">
+                                        <h1 className="text-uppercase text-white font-weight-bold">السلام عليكم ورحمة الله وبركاته</h1>
+                                        <hr className="divider my-4" />
+                                    </div>
+                                    <div className="col-lg-8 align-self-baseline">
+                                        <p className="text-white-75 font-weight-light mb-5">Muslim Guide can help you find nearest mosque from your location.<br />Don't miss your prayers by activating notification!</p>
+                                        <Link className="btn-home btn-primary btn-xl js-scroll-trigger"
+                                            onClick={() => this.trigerFunction()}
+                                        // data={this.props}
+                                        >
+                                            Mosque Near Me
                                 </Link>
-                                <div>
-                                    {this.props.masjid.masjid.length > 0 ? (
-                                        <p className="text-white-75 font-weight-light mb-5">Lokasi telah didapatkan</p>
-                                    ) : (
-                                            <div></div>
-                                        )}
+                                        <div>
+                                            {this.props.masjid.masjid.length > 0 ? (
+                                                <p className="text-white-75 font-weight-light mb-5">Lokasi telah didapatkan</p>
+                                            ) : (
+                                                    <div></div>
+                                                )}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </header>
+                        </header>
 
-                <Footer />
+                        <Footer />
 
-            </body>
+                    </body>
+                ) : (
+                        <Redirect to={{ pathname: "/signin" }} />
+                    )}
+            </div>
 
         )
     }
@@ -65,7 +72,8 @@ const mapStateToProps = (state) => {
         masjid: state.masjid,
         waktuSholat: state.waktuSholat,
         userLoc: state.userLocation,
-        dataMasjid: state.masjid.masjid
+        dataMasjid: state.masjid.masjid,
+        isLogin: state.user.isLogin
     }
 }
 
