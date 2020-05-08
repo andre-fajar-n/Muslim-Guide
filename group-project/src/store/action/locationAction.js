@@ -42,6 +42,9 @@ export function responseWithDistance(dataObj) {
         return dispatch => {
             let arrayMesjid = dataObj.data.masjid.map(elem => {
                 console.log('sssssssssss===>',elem.geometry.location.lon)
+                if (elem.vicinity === undefined) {
+                    elem.vicinity = "Maaf, Alamat Belum Tersedia"
+                }
                 return {                        
                     masjidName : elem.name,
                     masjidAlamat : elem.vicinity,

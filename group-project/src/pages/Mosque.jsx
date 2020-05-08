@@ -12,20 +12,26 @@ class Mosque extends Component {
             <div>
                 {this.props.isLogin ? (
                     <body id="page-top">
-                        <Navigation />
-                        <header className="masthead">
-                            <div className="main-box">
-                                {this.props.masjid.masjid.map((value) =>
-                                    (
-                                        <ListMosque
-                                            nama={value.name}
-                                            alamat={value.vicinity} />
-                                    ))
-                                }
-                            </div>
-                        </header>
-                        <Footer />
-                    </body>
+                <Navigation />
+                <header className="masthead">
+                    <div className="main-box">
+                        {this.props.userLoc.dataWithDistance.map((value) =>
+                            (   
+                                
+                                <ListMosque
+                                    nama={value.masjidName}
+                                    alamat={value.masjidAlamat} 
+                                    jarak={value.jarak} 
+                                />
+
+                            ))
+                        }
+                    </div>
+
+                </header>
+                <Footer />
+
+            </body>
                 ) : (
                         <Redirect to={{ pathname: "/signin" }} />
                     )}

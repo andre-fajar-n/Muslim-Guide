@@ -5,7 +5,7 @@ import { getWaktuSholat } from "../store/action/waktuSholat"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
 import { Link, Redirect } from "react-router-dom"
-import { showPosition } from "../store/action/locationAction"
+import { showPosition, responseWithDistance } from "../store/action/locationAction"
 
 class Home extends Component {
     // componentDidMount = async () => {
@@ -18,6 +18,11 @@ class Home extends Component {
         console.log('ini user loc', this.props.userLoc)
         await this.props.dataMasjid(`${this.props.userLoc.userlatitude}`, `${this.props.userLoc.userlongitude}`)
         await this.props.dataWaktu(`${this.props.userLoc.userlongitude}`, `${this.props.userLoc.userlatitude}`)
+        await this.props.responseWithDistance({
+            lat : this.props.userLoc.userlatitude, 
+            lon : this.props.userLoc.userlongitude, 
+            data : this.props.masjid
+        })
     }
 
     render() {
@@ -81,7 +86,7 @@ const mapDispatchToProps = {
     dataMasjid: (lon, lat) => getMasjid(lon, lat),
     dataWaktu: (lon, lat) => getWaktuSholat(lon, lat),
     showPosition: () => showPosition(),
-    // getJarak
+    responseWithDistance : responseWithDistance
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
