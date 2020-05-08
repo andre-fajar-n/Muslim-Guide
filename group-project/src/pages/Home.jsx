@@ -50,7 +50,10 @@ class Home extends Component {
                                 </Link>
                                         <div>
                                             {this.props.masjid.masjid.length > 0 ? (
-                                                <div className="double-click mt-2">We already got your location!</div>
+                                                <div>
+                                                    <div className="double-click mt-2">We already got your location!</div>
+                                                    <div className="double-click mt-2">Go to Mosque and see Prayer Times!</div>
+                                                </div>
                                             ) : (
                                                     <div className="double-click mt-2">Double click the button!</div>
                                                 )}
