@@ -7,7 +7,8 @@ body {
       rgba(204, 124, 70, 0.4),
       rgba(133, 76, 38, 0.438)
     ),
-    url("../images/background-profil.jpg") !important;
+    /* url("../images/background-profil.jpg") !important; */
+    url("../../images/background-profil.jpg") !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
@@ -16,14 +17,16 @@ body {
 }
 
 .login-box {
-  width: 280px;
+  width: 40%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  background-color: rgba(245, 231, 221, 0.5);
-  padding: 10px 25px 40px 25px;
+  background-color: rgba(245, 231, 221, 0.7);
+  padding: 10px 25px 20px 25px;
+  border-radius: 10px;
+
 }
 
 @media (max-width: 576px) {
@@ -31,6 +34,20 @@ body {
     background-color: transparent;
     padding: 0;
   }
+  .login-box h1 {
+  color: white;
+  }
+  ::placeholder {
+    color: white !important;
+  }
+  .btn {
+    color: white !important;
+  }
+  .textbox input {
+    font-size: 16px !important;
+  }
+
+
 }
 
 .login-box h1 {
@@ -54,11 +71,12 @@ body {
   border: none;
   outline: none;
   background: none;
-  color: rgba(36, 24, 16, 0.6);
+  color: rgba(36, 24, 16, 0.7);
   font-size: 18px;
   width: 80%;
   float: left;
   margin: 0 10px;
+  border-radius: 6px;
 }
 
 input {

@@ -19,9 +19,9 @@ class Home extends Component {
         await this.props.dataMasjid(`${this.props.userLoc.userlatitude}`, `${this.props.userLoc.userlongitude}`)
         await this.props.dataWaktu(`${this.props.userLoc.userlongitude}`, `${this.props.userLoc.userlatitude}`)
         await this.props.responseWithDistance({
-            lat : this.props.userLoc.userlatitude, 
-            lon : this.props.userLoc.userlongitude, 
-            data : this.props.masjid
+            lat: this.props.userLoc.userlatitude,
+            lon: this.props.userLoc.userlongitude,
+            data: this.props.masjid
         })
     }
 
@@ -50,9 +50,9 @@ class Home extends Component {
                                 </Link>
                                         <div>
                                             {this.props.masjid.masjid.length > 0 ? (
-                                                <p className="text-white-75 font-weight-light mb-5">Lokasi telah didapatkan</p>
+                                                <div className="double-click mt-2">We already got your location!</div>
                                             ) : (
-                                                    <div></div>
+                                                    <div className="double-click mt-2">Double click the button!</div>
                                                 )}
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@ const mapDispatchToProps = {
     dataMasjid: (lon, lat) => getMasjid(lon, lat),
     dataWaktu: (lon, lat) => getWaktuSholat(lon, lat),
     showPosition: () => showPosition(),
-    responseWithDistance : responseWithDistance
+    responseWithDistance: responseWithDistance
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

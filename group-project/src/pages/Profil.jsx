@@ -1,6 +1,6 @@
 //page profil
 import React, { Component } from "react";
-import "../styles-aji/style-profil.css";
+import "../style/css/style-profil.css";
 import { connect } from "react-redux";
 import Navigation from "../components/Navigation";
 import { Redirect } from "react-router-dom";

@@ -12,7 +12,7 @@ const ListMosque = (props) => {
                         <div class="card-body">
                             <div className="col-12">
                                 <strong>
-                                {props.nama}
+                                    {props.nama}
                                 </strong>
                             </div>
                             <div className="col-12">
@@ -23,7 +23,7 @@ const ListMosque = (props) => {
                             </div>
                             <div className="col-12">
                                 <strong>
-                                {props.jarak}
+                                    {props.jarak}
                                 </strong>
                             </div>
                             {/* <h5 class="card-title">{props.nama}</h5> */}

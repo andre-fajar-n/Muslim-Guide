@@ -9,7 +9,6 @@ import Mosque from "../pages/Mosque";
 import ShowWaktuSholat from "../pages/ShowWaktuSholat";
 import SignIn from "../pages/Signin";
 import Profil from "../pages/Profil";
-import Test from "../pages/Test";
 
 const MainRoutes = () => {
   return (
@@ -18,7 +17,6 @@ const MainRoutes = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/mosque" component={Mosque} />
-          <Route exact path="/test" component={Test} />
           <Route exact path="/prayertimes" component={ShowWaktuSholat} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/profil" component={Profil} />

@@ -33,9 +33,9 @@ class Navigation extends Component {
                             <li className="nav-item">
                                 <div>
                                     {this.props.isLogin ? (
-                                        <Link onClick={() => this.postSignout()} className="nav-link js-scroll-trigger">LogOut</Link>
+                                        <Link onClick={() => this.postSignout()} className="nav-link js-scroll-trigger">Log Out</Link>
                                     ) : (
-                                            <Link to="/signin" className="nav-link js-scroll-trigger">SignIn</Link>
+                                            <Link to="/signin" className="nav-link js-scroll-trigger">Sign In</Link>
                                         )}
                                 </div>
                             </li>
