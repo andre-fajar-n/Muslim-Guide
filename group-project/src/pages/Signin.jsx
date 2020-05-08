@@ -8,6 +8,7 @@ import {
   changeInputPassword,
   doLogin,
 } from "../store/action/user";
+import Navigation from "../components/Navigation";
 
 class SignIn extends Component {
   componentDidMount = async () => {
@@ -26,6 +27,7 @@ class SignIn extends Component {
     console.warn("cek login", this.props)
     return (
       <React.Fragment>
+        <Navigation {...this.props} />
         <div className="body-signin">
           <div className="login-box">
             <h1>Login</h1>
