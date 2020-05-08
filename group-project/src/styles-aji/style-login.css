@@ -7,12 +7,12 @@ body {
       rgba(204, 124, 70, 0.4),
       rgba(133, 76, 38, 0.438)
     ),
-    url("../images-aji/background-profil.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: #a7c4d1;
-  background-size: cover;
+    url("../images/background-profil.jpg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-color: #a7c4d1 !important;
+  background-size: cover !important;
 }
 
 .login-box {

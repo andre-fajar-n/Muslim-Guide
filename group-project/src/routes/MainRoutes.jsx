@@ -7,8 +7,8 @@ import store from "../store";
 import Home from "../pages/Home";
 import Mosque from "../pages/Mosque";
 import ShowWaktuSholat from "../pages/ShowWaktuSholat";
-import SignIn from "../page/signin";
-import Profil from "../page/profil";
+import SignIn from "../pages/Signin";
+import Profil from "../pages/Profil";
 import Test from "../pages/Test";
 
 const MainRoutes = () => {

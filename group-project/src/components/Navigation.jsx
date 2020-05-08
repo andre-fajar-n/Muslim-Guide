@@ -12,9 +12,9 @@ class Navigation extends Component {
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto my-2 my-lg-0">
                             <li className="nav-item"><Link to="/mosque" className="nav-link js-scroll-trigger">Mosque</Link></li>
-                            <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#services">Qibla</a></li>
                             <li className="nav-item"><Link to="/prayertimes" className="nav-link js-scroll-trigger">Prayer Times</Link></li>
-                            <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#contact">Location</a></li>
+                            <li className="nav-item"><Link to="/profil" className="nav-link js-scroll-trigger">Profile</Link></li>
+                            <li className="nav-item"><Link to="/signin" className="nav-link js-scroll-trigger">SignIn</Link></li>
                         </ul>
                     </div>
                 </div>
