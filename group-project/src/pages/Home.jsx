@@ -8,14 +8,8 @@ import { Link, Redirect } from "react-router-dom"
 import { showPosition, responseWithDistance } from "../store/action/locationAction"
 
 class Home extends Component {
-    // componentDidMount = async () => {
-    //     this.props.dataWaktu("-7.973006", "112.6079458")
-    //     await this.props.dataMasjid("-7.973006", "112.6079458")
-    // }
-
     trigerFunction = async () => {
         await this.props.showPosition()
-        console.log('ini user loc', this.props.userLoc)
         await this.props.dataMasjid(`${this.props.userLoc.userlatitude}`, `${this.props.userLoc.userlongitude}`)
         await this.props.dataWaktu(`${this.props.userLoc.userlongitude}`, `${this.props.userLoc.userlatitude}`)
         await this.props.responseWithDistance({
@@ -26,11 +20,9 @@ class Home extends Component {
     }
 
     render() {
-        console.warn("cek di home", this.props)
         return (
             <div>
                 {this.props.isLogin ? (
-
                     <body id="page-top">
                         <Navigation {...this.props} />
                         <header className="masthead">
@@ -44,7 +36,6 @@ class Home extends Component {
                                         <p className="text-white-75 font-weight-light mb-5">Muslim Guide can help you find nearest mosque from your location.<br />Don't miss your prayers by activating notification!</p>
                                         <Link className="btn-home btn-primary btn-xl js-scroll-trigger"
                                             onClick={() => this.trigerFunction()}
-                                        // data={this.props}
                                         >
                                             Mosque Near Me
                                 </Link>

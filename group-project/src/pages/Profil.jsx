@@ -7,11 +7,9 @@ import { Redirect } from "react-router-dom";
 
 class Profil extends Component {
   render() {
-    console.warn("cek profil", this.props)
     return (
       <div>
         {this.props.isLogin ? (
-
           <React.Fragment>
             <Navigation {...this.props} />
             <div className="profil-body">
