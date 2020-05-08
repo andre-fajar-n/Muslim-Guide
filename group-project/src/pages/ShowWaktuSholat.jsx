@@ -7,7 +7,6 @@ import { Redirect } from "react-router-dom"
 
 class ShowWaktuSholat extends Component {
     render() {
-        console.warn("cek waktu sholat", this.props)
         return (
             <div>
                 {this.props.isLogin ? (

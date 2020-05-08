@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
     masjid: masjidReducer,
     waktuSholat: waktuSholatReducer,
     user: userReducer,
-    userLocation : locationReducer,
+    userLocation: locationReducer,
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk))

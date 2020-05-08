@@ -7,7 +7,6 @@ import { Redirect } from "react-router-dom"
 
 class Mosque extends Component {
     render() {
-        // console.warn("cek di page mosque", this.props)
         return (
             <div>
                 {this.props.isLogin ? (

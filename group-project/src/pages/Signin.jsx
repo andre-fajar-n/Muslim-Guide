@@ -17,14 +17,12 @@ class SignIn extends Component {
 
   postLogin = async () => {
     await this.props.doLogin();
-    console.log(this.props.isLogin);
     if (this.props.isLogin) {
       this.props.history.push("/profil");
     }
   };
 
   render() {
-    console.warn("cek login", this.props)
     return (
       <React.Fragment>
         <Navigation {...this.props} />

@@ -11,7 +11,6 @@ class Navigation extends Component {
         }
     };
     render() {
-        console.warn("cek di header", this.props)
         return (
             <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
                 <div className="container">
