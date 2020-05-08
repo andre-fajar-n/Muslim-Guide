@@ -12,7 +12,7 @@ class ShowWaktuSholat extends Component {
             <div>
                 {this.props.isLogin ? (
                     <body id="page-top">
-                        <Navigation />
+                        <Navigation {...this.props} />
                         <header className="masthead">
                             <WaktuSholat
                                 jamSholat={this.props.waktuSholat}
